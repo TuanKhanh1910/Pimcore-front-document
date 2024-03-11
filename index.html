@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Css/style.css" />
+    <title>Pimcore-front Document</title>
+  </head>
+  <body>
+    <section class="sec-main">
+      <div class="main-title">
+        <div class="container">
+          <h1 class="project-title">Dự Án Pimcore-front</h1>
+        </div>
+      </div>
+    </section>
+    <section class="sec-intro">
+      <div class="intro">
+        <div class="container">
+          <div class="intro-content">
+            <h2 class="intro-title">Software introduction</h2>
+            <p class="intro-desc">
+              This is software such as an information board used in
+              supermarkets, apartments, etc.
+            </p>
+          </div>
+          <div class="intro-image">
+            <div class="intro-details row">
+              <div class="intro-item col col-4">
+                <img src="./image/image_intro1.png" alt="" />
+              </div>
+              <div class="intro-item col col-4">
+                <img src="./image/image_intro2.png" alt="" />
+              </div>
+              <div class="intro-item col col-4">
+                <img src="./image/image_intro3.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec-tech">
+      <div class="tech">
+        <div class="container">
+          <h2 class="tech-title">Technologies used</h2>
+          <p class="tech-descLang">
+            <span class="tech-bold">Languages :</span> Javascript, Typescript,
+          </p>
+          <p class="tech-descLib">
+            <span class="tech-bold">Library :</span> : Reactjs,Zustand,Axios
+            ,html-to-image-no-fonts,react-dom,react-router-dom,sass,vite-tsconfig-paths,@loadable/component,classnames,idb-keyval,jodit-react,leaflet,ramda
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="sec-product">
+      <div class="product">
+        <div class="container">
+          <h2 class="product-title">Product details</h2>
+          <div class="pageLogin">
+            <div class="pageLogin-top">
+              <p class="pageLogin-title">
+                After starting the product, the first page that will appear is
+                the login page
+              </p>
+              <img src="./image/imgLogin.png" alt="" class="pageLogin-img" />
+            </div>
+            <div class="pageLogin-bot">
+              <h4 class="pageLogin-explain">Explain the flow of the code :</h4>
+              <p class="pageLogin-text">
+                First, the user must log in with their account and password.
+                Then the system will start checking the user's userId, if
+                present in the data, it will allow the user to log in. Below is
+                an illustration of two states when logging in successfully and
+                unsuccessfully
+              </p>
+              <div class="pageLogin-content">
+                <div class="pageLogin-details row">
+                  <div class="pageLogin-item col col-6">
+                    <div class="pageLogin-wrapper">
+                      <p class="pageLogin-titleImage">Login Failed</p>
+                      <img src="./image/loginFailed.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="pageLogin-item col col-6">
+                    <div class="pageLogin-wrapper">
+                      <p class="pageLogin-titleImage">Login Success</p>
+                      <img src="./image/loginSuccess.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pageLogin-extra">So how was useId called?</div>
+              <div class="pageLogin-extra1">
+                <p class="text">
+                  - First we create a type called UserItem that includes the
+                  attributes in it
+                  (id,userId,name,siteName,groupId,logoImage,contCategory,email,phoneNumber).
+                  <br />
+                  - Next, we create a type named UserSlice to inherit from
+                  UserItem and add setter functions (value setting functions)
+                  for each attribute of UserItem. Then we define another type
+                  named CDNSlice. It describes the structure of a part of the
+                  store related to CDN with 2 properties (cdnUrl and setCdnUrl
+                  ).
+                  <br />
+                  - Next we define a type named UserStoreSlice and it is a
+                  combination of UserSlice and CDNSlice.
+                </p>
+                <img src="./image/extra1.png" alt="" />
+              </div>
+              <div class="pageLogin-extra2">
+                <p class="text">
+                  Next we will define a type named StorePropsDevtools. It will
+                  describe the properties expected when creating a store with
+                  Zustand and enabling the devtool feature. And it will accept 2
+                  parameters ( initializer, devtoolsOptions ). Initializer is a
+                  function of type StateCreator, which is a function provided by
+                  Zustand to initialize the initial state of the store.
+                  DevtoolsOptions is an optional parameter of type
+                  DevtoolsOptions and it is an interface imported from the
+                  zustand/middleware library.
+                </p>
+                <img src="./image/extra2.png" alt="" />
+              </div>
+              <div class="pageLogin-extra3">
+                <p class="text">
+                  - Then in the UserStore folder, we will create a store named
+                  UseUser and use the create function from Zustand. Inside, use
+                  the middleware in order of priority:
+                  <br />
+                  + devtools: Enable the Devtools feature for the store,
+                  allowing easy monitoring and debugging of status.
+                  <br />
+                  + persist : Use persist middleware to store store state.
+                  <br />
+                  + Configure storage using createJSONStorage with
+                  sessionStorage to store state on the open tab. + The store
+                  name is set as "store".
+                  <br />
+                  - Next, the createUserSlice and createCDNSlice functions are
+                  used to create separate sections (slices) of the state. This
+                  helps separate logic and easily manage different parts of
+                  state related to users and CDN.
+                  <br />
+                  - Create a Hook named useUserStore : + This hook allows
+                  retrieving a specific set of properties from the useUser
+                  store. + It works similar to the useUserStore hook explained
+                  earlier. <br />
+                  - Finally export the useUser hook to the outside. This is the
+                  main hook to access and update the entire state of the store.
+                  Export the useUserStore hook to retrieve specific properties
+                  from the store.
+                </p>
+                <img src="./image/extra3.png" alt="" />
+              </div>
+              <div class="pageLogin-extra4">
+                <p class="pageLogin-text">
+                  - On the Login page, we will create an interface so users can
+                  log in. Here there will be a login button, right there we will
+                  create an onclick event. In that event we will create a
+                  function called handleClickLogin.
+                </p>
+                <div class="div">
+                  <img src="./image/buttonOnclick.png" alt="" />
+                </div>
+                <img src="./image/functionOnclick.png" alt="" />
+              </div>
+              <div class="pageLogin-extra5">
+                <p class="pageLogin-title">
+                  In the handleClickLogin function, we will use the
+                  MdmService.login(request) function to call the api with the
+                  POST method from the Mdm folder with file index.ts
+                </p>
+                <img src="./image/APILogin.png" alt="" />
+              </div>
+              <div class="pageLogin-extra6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

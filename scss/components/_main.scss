@@ -1,0 +1,84 @@
+.sec {
+  &-main,
+  &-intro,
+  &-tech,
+  &-product {
+    margin-top: 2rem;
+  }
+}
+
+.project-title {
+  text-align: center;
+  color: red;
+  font-size: 4.5rem;
+}
+.intro {
+  &-title {
+    font-weight: bold;
+    font-size: 3rem;
+  }
+  &-desc {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  &-image {
+    margin-top: 2rem;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.tech {
+  &-title {
+    font-weight: bold;
+    font-size: 3rem;
+  }
+  &-bold {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  &-descLang,
+  &-descLib {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
+.product {
+  &-title {
+    font-weight: bold;
+    font-size: 3rem;
+  }
+  .pageLogin {
+    &-top {
+      margin-bottom: 2rem;
+    }
+    &-title,
+    &-text {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    &-explain {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &-titleImage {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    &-extra {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 2rem 0;
+    }
+
+    .text {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin: 1.5rem 0;
+    }
+  }
+}
