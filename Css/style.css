@@ -459,7 +459,7 @@ img {
   width: 8.3333333333%;
 }
 
-.sec-main, .sec-intro, .sec-tech, .sec-product {
+.sec-main, .sec-intro, .sec-tech, .sec-product, .sec-structure, .sec-docment {
   margin-top: 2rem;
 }
 
@@ -529,6 +529,49 @@ img {
   font-size: 1.8rem;
   font-weight: 500;
   margin: 1.5rem 0;
+}
+
+.structure-title {
+  font-weight: bold;
+  font-size: 3rem;
+}
+.structure-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.structure-bold {
+  font-size: 2.1rem;
+  font-weight: bold;
+}
+.structure-folderItem {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.structure li {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding-left: 1.5rem;
+}
+
+.document-title {
+  font-weight: bold;
+  font-size: 3rem;
+}
+.document-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+.document .document-text-1 {
+  padding-left: 1rem;
+}
+.document .document-text-1 li {
+  padding: 0.5rem 0;
+}
+.document .example-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .mb-0 {

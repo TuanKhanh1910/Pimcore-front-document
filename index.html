@@ -5,9 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Css/style.css" />
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Pimcore-front Document</title>
   </head>
   <body>
+    <!-- header -->
     <section class="sec-main">
       <div class="main-title">
         <div class="container">
@@ -15,6 +24,7 @@
         </div>
       </div>
     </section>
+    <!-- intro -->
     <section class="sec-intro">
       <div class="intro">
         <div class="container">
@@ -37,6 +47,60 @@
                 <img src="./image/image_intro3.png" alt="" />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- project structure -->
+    <section class="sec-structure">
+      <div class="structure">
+        <div class="container">
+          <div class="structure-content">
+            <h2 class="structure-title">Project Structure</h2>
+          </div>
+          <div class="structure-details">
+            <p class="structure-text">
+              Includes 4 main folders and other files :
+            </p>
+            <div class="structure-folder">
+              <p class="structure-folderItem">
+                + <span class="structure-bold">nginx</span> :
+              </p>
+              <p class="structure-folderItem">
+                + <span class="structure-bold">node_modules :</span> Is the
+                place to manage necessary libraries and modules. It contains all
+                the JS packages the project installs via npm or yarn
+              </p>
+              <p class="structure-folderItem">
+                + <span class="structure-bold">public :</span> : where static
+                files are stored such as images, videos, fonts, CSS and
+                JavaScript. Files in the public folder will be accessed directly
+                by the browser when users visit your website.
+              </p>
+              <p class="structure-folderItem">
+                + <span class="structure-bold">src :</span> :where the source
+                code of the ReactJS application is stored. This is the most
+                important folder in your project.
+              </p>
+            </div>
+            <ul>
+              <li>
+                - src/api : Used to store JavaScript files involved in
+                communicating with the API.
+              </li>
+              <li>- src/assets : Where the project's SASS folder is stored.</li>
+              <li>- src/commponents : Hosting ReactJS components.</li>
+              <li>- src/contexts: Where to write state contexts.</li>
+              <li>- src/hooks: Where to write function hooks.</li>
+              <li>- src/pages: Where to write UI pages.</li>
+              <li>- src/scripts: Where to write javascript func.</li>
+              <li>- src/store: Where to manage state.</li>
+              <li>
+                - src/utils: Where to write commonly used functions Example of
+                the LOGIN function proce.
+              </li>
+              <li>- main.tsx : The starting place of the project.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -177,6 +241,175 @@
                 <img src="./image/APILogin.png" alt="" />
               </div>
               <div class="pageLogin-extra6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- tóm tắt -->
+    <section class="sec-docment">
+      <div class="document">
+        <div class="container">
+          <div class="document-content">
+            <p class="document-title">
+              In short, in this project, the folders are clearly divided so that
+              developers can easily manage the code. In addition, in this
+              project we do not use Redux to manage States, instead we use
+              Zustand to manage States.
+            </p>
+            <p class="document-text">
+              So what advantages does Zustand have that in this project we use
+              it without using Redux to manage State ?
+            </p>
+            <ul class="document-text-1">
+              <li>
+                - Zustand is a state management library in React. It allows you
+                to manage the state of your application easily and flexibly.
+              </li>
+              <li>
+                - Zustand is a simple state management tool that allows you to
+                manage state easily using hooks and stores.
+              </li>
+              <li>
+                - Zustand doesn't require you to use any complex concepts or
+                operations to manage state.
+              </li>
+              <li>
+                - With Zustand, you can create a store with initial values, and
+                then access or update state from any component in your
+                application. Zustand provides several hooks like useStore or
+                useState to access and update state.
+              </li>
+            </ul>
+            <p class="document-text">
+              In addition, Zustand also has advantages compared to Redux
+            </p>
+            <ul class="document-text-1">
+              <li>- Simple structure, easy to implement and use.</li>
+              <li>
+                - Zustand only re-renders the component when there is a state
+                change.
+              </li>
+              <li>
+                - Zustand manages state centrally in one place, this is similar
+                to Redux, but unlike Redux, which has to create actions,
+                reducers and dispatch actions to handle state changes, Zustand
+                does it easier, just a store is enough. .
+              </li>
+              <li>
+                - Use hooks to create a store, consistent with the current
+                project structure using Hooks.
+              </li>
+              <li>
+                - Clean code, concise in implementation and easy to read code.
+              </li>
+            </ul>
+            <img src="./image/hookZustand.png" alt="" />
+
+            <div class="document-text">
+              + As the image example above, we will first create a hook named
+              usePost
+            </div>
+            <div class="document-text">
+              + Then create a Zustand hook specifically for managing partial
+              state that conforms to the PostSlice interface
+            </div>
+            <div class="document-text">
+              + Additionally, we will wrap the hook's core functionality with
+              devtools middleware. This allows you to use Redux DevTools to
+              debug and inspect status in the browser's developer tools, and
+              indicates that the function can accept any number of arguments
+              (props) that can be used. passed to usePost later.
+            </div>
+            <div class="document-text">
+              + Inside the function :
+              <ul class="document-text-1">
+                <li>
+                  -...createBoardSlice(...props): Merge the state returned by
+                  the createBoardSlice function (can be defined in
+                  PostStore.slice.js). This section can manage data related to
+                  the table in the post (e.g. table ID, title, description).
+                </li>
+                <li>
+                  - ...createImageSlice(...props): Similar to createBoardSlice,
+                  merges the state returned by the createImageSlice function,
+                  can manage information about images related to the post (e.g.
+                  image URL, caption prefer).
+                </li>
+                <li>
+                  - ...createTargetSlice(...props): Consolidates the state
+                  returned by the createTargetSlice function, the purpose of
+                  which is unclear without additional context.
+                </li>
+                <li>
+                  - ...createCommonSlice(...props): Consolidates the state
+                  returned by the createCommonSlice function, which can manage
+                  common data that applies to different parts of the application
+                  (e.g., user authentication status, loading indicator, error
+                  message).
+                </li>
+              </ul>
+            </div>
+            <div class="document-text">
+              + Moving on, let's define another custom React hook called
+              usePostStore.
+            </div>
+            <div class="document-text">
+              + This hook receives an array of strings (keys) as arguments. Each
+              string represents the property name from the PostSlice
+              interface.And instantiates an empty result object to store the
+              selected state properties.
+            </div>
+            <div class="document-text">
+              + In this code: const state = keys.map((k) => ({ key: k, value:
+              usePost((_state) => _state[k]) })), we will loop through the
+              "keys" array " and for each key (k) we create an object with two
+              properties :
+              <ul class="document-text-1">
+                <li>
+                  - key: k: Stores the original attribute name from the keys
+                  array.
+                </li>
+                <li>
+                  - value: usePost((_state) => _state[k]): Gọi hook usePost để
+                  truy xuất giá trị cụ thể từ trạng thái được quản lý bởi
+                  usePost. Hàm gọi lại (_state) => _state[k] chọn thuộc tính tên
+                  k từ trạng thái.
+                </li>
+              </ul>
+            </div>
+            <div class="document-text">
+              + The last 2 steps we just need to loop through the previously
+              created state array and assign the value of the selected state
+              property to a result object.
+            </div>
+            <div class="document-text">
+              + Finally, just by exporting them, we can carry them around the
+              project, just call them and pass parameters, that makes it easier
+              for us to manage the use of Redux, because when using Redux we We
+              use dispatch, action,...
+            </div>
+            <div class="document-example">
+              <div class="example-row row">
+                <div class="example-item col col-4">
+                  <img src="./image/ex1.png" alt="" />
+                </div>
+                <div class="example-item col col-4">
+                  <img src="./image/ex2.png" alt="" />
+                </div>
+                <div class="example-item col col-4">
+                  <img src="./image/ex3.png" alt="" />
+                </div>
+                <div class="example-item col col-4">
+                  <img src="./image/ex4.png" alt="" />
+                </div>
+                <div class="example-item col col-4">
+                  <img src="./image/ex5.png" alt="" />
+                </div>
+                <div class="example-item col col-4">
+                  <img src="./image/ex6.png" alt="" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
